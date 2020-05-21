@@ -1,3 +1,4 @@
+
 #include <Arduino.h>
 
 class Robot{
@@ -145,19 +146,19 @@ class Robot{
   }
   void set_theta(float val, int i){
     theta[i] = deg2Rad(val) +theta_offset[i] ;
-    Serial.print("theta[");
-    Serial.print(i);
-    Serial.print("] ");
-    Serial.print(" in rad: ");
-    Serial.println(deg2Rad(val));
+//    Serial.print("theta[");
+//    Serial.print(i);
+//    Serial.print("] ");
+//    Serial.print(" in rad: ");
+//    Serial.println(deg2Rad(val));
   }
   void set_prevTheta(float val, int i){
     prevTheta[i] = deg2Rad(val) +theta_offset[i] ;
-    Serial.print("prevTheta[");
-    Serial.print(i);
-    Serial.print("] ");
-    Serial.print(" in rad: ");
-    Serial.println(deg2Rad(val));
+//    Serial.print("prevTheta[");
+//    Serial.print(i);
+//    Serial.print("] ");
+//    Serial.print(" in rad: ");
+//    Serial.println(deg2Rad(val));
   }
   void set_pitchEE(float val){
     pitchEE = deg2Rad(val);
@@ -312,6 +313,7 @@ class Robot{
   void tooClose(){
     if (Xr < 200 && Zr <= d[0]){
         Xr = 200;
+        Serial.println("Xr too close to base, set to 200mm.");
     }
   }
   
